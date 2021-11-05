@@ -1,23 +1,17 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:yt_app/components/blur.dart';
 import 'package:yt_app/components/video_card_main.dart';
-import 'package:yt_app/constants/text_const.dart';
 import 'package:yt_app/constants/widgets_const.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class VideoPage extends StatefulWidget {
+  const VideoPage({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _VideoPageState createState() => _VideoPageState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  //bool _light = true;
-
+class _VideoPageState extends State<VideoPage> {
   Widget _serchBox() {
     return Container(
       width: MediaQuery.of(context).size.width * 0.50,
@@ -59,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
+              automaticallyImplyLeading: false,
               backgroundColor: const Color(0xFFF0F0F0),
               expandedHeight: 80.0,
               flexibleSpace: Padding(
@@ -70,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     const BlurBack(
                       sigmaX: 4,
                       sigmaY: 4,
-                      widget: DrawerButton(),
+                      widget: BackButtonA(),
                     ),
                     _serchBox(),
                     const BlurBack(
@@ -92,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  const VideoCardMain(),
+                  Text('ok'),
 
                   // Switch(
                   //   value: _light,

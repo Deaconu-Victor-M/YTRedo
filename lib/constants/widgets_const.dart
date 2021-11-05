@@ -11,16 +11,57 @@ class DrawerButton extends StatelessWidget {
       width: 68,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Container(
-          height: 48,
-          width: 48,
-          padding: const EdgeInsets.all(12),
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            shape: BoxShape.circle,
+        child: RawMaterialButton(
+          onPressed: () {},
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
           ),
-          child: SvgPicture.asset(
-            'assets/svg/menu.svg',
+          child: Container(
+            height: 48,
+            width: 48,
+            padding: const EdgeInsets.all(12),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,
+            ),
+            child: SvgPicture.asset(
+              'assets/svg/menu.svg',
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class BackButtonA extends StatelessWidget {
+  const BackButtonA({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 68,
+      width: 68,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: RawMaterialButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+          ),
+          child: Container(
+            height: 48,
+            width: 48,
+            padding: const EdgeInsets.all(12),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,
+            ),
+            child: SvgPicture.asset(
+              'assets/svg/back_arrow.svg',
+            ),
           ),
         ),
       ),
